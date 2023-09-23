@@ -10,13 +10,13 @@ AIUtil("input", "Product Name").SetText DataTable.Value("Product Name", "Setup_N
 AIUtil("input", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Price")).SetText DataTable.Value("Price", "Setup_New_Speaker_Product")
 AIUtil("text_box", "Description").SetText DataTable.Value("Description", "Setup_New_Speaker_Product")
 AIUtil.FindTextBlock("CUSTOMISATION").Click
-AIUtil("camera").Click
-AIUtil.FindText(DataTable.Value("Image Name", "Setup_New_Speaker_Product")).Click
-AIUtil("button", "Open").Click
 AIUtil.FindTextBlock("ADD COLORS").Click
 ColorIndex = DataTable.Value("Color Index", "Setup_New_Speaker_Product") + 1 - 1
 AIUtil("check_box", micAnyText, micFromLeft, ColorIndex).SetState "On"
 AIUtil.FindTextBlock("APPLY").Click
+AIUtil("camera").Click
+AIUtil.FindText(DataTable.Value("Image Name", "Setup_New_Speaker_Product")).Click
+AIUtil("button", "Open").Click
 AIUtil("text_box", micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("IMAGES", micFromBottom, 1)).SetText DataTable.Value("Quantity", "Setup_New_Speaker_Product")
 AIUtil("down_triangle").Click
 If (DataTable.Value("Stock Status", "Setup_New_Speaker_Product") = "IN STOCK") Then
