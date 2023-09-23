@@ -1,4 +1,5 @@
 ﻿Dim ScriptFolder
+
 AIUtil.SetContext WpfWindow("wpftypename:=window", "regexpwndtitle:=AOS Managment Console", "devname:=AOS Managment Console")
 
 'Setup Yellow Kyber Crystal first, HP S9500 Bluetooth Wireless Speaker is the featured product so it can't be deleted and the Yellow Kyber Crystal text is in the Javascript
@@ -12,8 +13,8 @@ AIUtil("check_box", "no", micFromBottom, 1).SetState "On"
 AIUtil.FindTextBlock("APPLY").Click
 AIUtil("camera", micAnyText, micFromBottom, 1).Click
 
-'AIUtil("field", micAnyText, micWithAnchorOnLeft, AIUtil("up_arrow")).SetText Environment.Value("TestDir") & "\Kyber Crystals"
-msgbox "Set the folder to be " & Environment.Value("TestDir") & "\Kyber Crystals\"
+'msgbox "Set the folder to be " & Environment.Value("TestDir") & "\Kyber Crystals\"
+WpfWindow("AOS Managment Console").Dialog("Select image for this color").WinEdit("File name:").Set Environment.Value("TestDir") & "\Kyber Crystals\" & "Yellow Kyber Crystal.jpg"
 AIUtil.FindTextBlock("Yellow Kyber Crystal.jpg").Click
 AIUtil("button", "Open").Click
 AIUtil("button", "SAVE").Click
@@ -37,6 +38,7 @@ AIUtil("button", "SAVE").Click
 
 
 'Code block for working on setting value for folder on initial image import, haven't gotten it working yet
+'AIUtil("field", micAnyText, micWithAnchorOnLeft, AIUtil("up_arrow")).SetText Environment.Value("TestDir") & "\Kyber Crystals"
 'AIUtil("field", micAnyText, micWithAnchorOnLeft, AIUtil("up_arrow")).Type Environment.Value("TestDir") & "\Kyber Crystals\" & "Yellow Kyber Crystal.jpg"
 'print Environment.Value("TestDir")
 'ScriptFolder=Split(Environment.Value("TestDir"), "\")
