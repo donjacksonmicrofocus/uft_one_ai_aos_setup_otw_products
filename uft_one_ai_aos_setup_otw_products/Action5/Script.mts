@@ -14,6 +14,7 @@ print "The number of rows is " & RowNum - 1
 For Iterator = 1 To (RowNum-1) Step 1
 	Set RowCheckBox = AIUtil("check_box", micAnyText, micFromTop, RowNum-Iterator)
 	'The OCR is getting false positives on some of the images, reverting to properties-based table work
+	rc = WpfWindow("AOS Managment Console").WpfTable("ProductsDataGrid").Exist
 	RowTextBox = WpfWindow("AOS Managment Console").WpfTable("ProductsDataGrid").GetCellData((RowNum-1-Iterator),"NAME")
 	WpfWindow("AOS Managment Console").WpfTable("ProductsDataGrid").SelectCell (RowNum-1-Iterator),"NAME"
 	'RowTextBox = AIUtil.FindTextBlock(micAnyText, micWithAnchorOnLeft, RowCheckBox).GetText
