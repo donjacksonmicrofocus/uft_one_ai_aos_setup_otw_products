@@ -4,6 +4,9 @@ AIUtil.SetContext WpfWindow("wpftypename:=window", "regexpwndtitle:=AOS Managmen
 
 'Setup Yellow Kyber Crystal first, HP S9500 Bluetooth Wireless Speaker is the featured product so it can't be deleted and the Yellow Kyber Crystal text is in the Javascript
 AIUtil.FindTextBlock("SPEAKERS").Click
+If AIUtil.FindTextBlock("HP S9500 Bluetooth Wireless Speaker").Exist(0) = FALSE Then
+	AIUtil.FindTextBlock("SPEAKERS").Click
+End If
 AIUtil.FindTextBlock("HP S9500 Bluetooth Wireless Speaker").Click
 AIUtil("input", "Product Name").SetText "Yelllow Kyber Crystal"
 AIUtil("text_box", "Description").SetText "Represents the power of the sun, hope, and goodness"
