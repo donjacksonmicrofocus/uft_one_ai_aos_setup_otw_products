@@ -1,4 +1,5 @@
-﻿Dim RowTextBox, RowNum
+﻿ExitAction
+Dim RowTextBox, RowNum
 AIUtil.SetContext WpfWindow("wpftypename:=window", "regexpwndtitle:=AOS Managment Console", "devname:=AOS Managment Console")
 AIUtil.FindTextBlock("SPEAKERS").Click
 

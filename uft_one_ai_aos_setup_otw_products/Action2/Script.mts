@@ -1,4 +1,5 @@
-﻿Dim ScriptFolder
+﻿ExitAction
+Dim ScriptFolder
 
 AIUtil.SetContext WpfWindow("wpftypename:=window", "regexpwndtitle:=AOS Managment Console", "devname:=AOS Managment Console")
 
@@ -16,8 +17,10 @@ AIUtil("check_box", "no", micFromBottom, 1).SetState "On"
 AIUtil.FindTextBlock("APPLY").Click
 AIUtil("camera", micAnyText, micFromBottom, 1).Click
 'msgbox "Set the folder to be " & Environment.Value("TestDir") & "\Kyber Crystals\"
-WpfWindow("AOS Managment Console").Dialog("Select image for this color").WinEdit("File name:").Set Environment.Value("TestDir") & "\Kyber Crystals\" & "Yellow Kyber Crystal.jpg"
-AIUtil.FindTextBlock("Yellow Kyber Crystal.jpg").Click
+WpfWindow("AOS Managment Console").Dialog("Select image for this color").WinEdit("File name:").Set Environment.Value("TestDir") & "\Kyber Crystals\" 
+AIUtil("button", "Open").Click
+WpfWindow("AOS Managment Console").Dialog("Select image for this color").WinEdit("File name:").Set "Yellow Kyber Crystal.jpg"
+'AIUtil.FindTextBlock("Yellow Kyber Crystal.jpg").Click
 AIUtil("button", "Open").Click
 AIUtil("button", "SAVE").Click
 AIUtil.FindTextBlock("Yelllow Kyber Crystal").Click
